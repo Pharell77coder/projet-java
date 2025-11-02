@@ -90,9 +90,12 @@ public class Player extends Entity {
         exp = 0;
         nextLevelExp = 5;
         coin = 500;
-        currentWeapon = new OBJ_Sword_Normal(gp);
+        /*currentWeapon = new OBJ_Sword_Normal(gp);
         currentShield = new OBJ_Shield_Wood(gp);
-        currentLight = null;
+        currentLight = null;*/
+        currentWeapon = new OBJ_Pickaxe(gp);
+        currentShield = new OBJ_Shield_Blue(gp);
+        currentLight = new OBJ_Lantern(gp);
         projectile = new OBJ_Fireball(gp);
         attack = getAttack();
         defense = getDefense();
