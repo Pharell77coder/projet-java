@@ -135,45 +135,61 @@ public class UI {
         int y = gp.tileSize/2;
         int i = 0;
 
+        int iconSize = 32;
+        int manaStartX = (gp.tileSize/2)-5;
+        int manaStartY = 0;
+
         //DRAW CURRENT LIFE
         while(i < gp.player.maxLife/2) {
-            g2.drawImage(heart_blank, x, y, null);
+            g2.drawImage(heart_blank, x, y, iconSize, iconSize, null);
             i++;
-            x += gp.tileSize;
+            x += gp.tileSize*0.75;
+            manaStartY = y + 32;
+
+            if(i % 8 == 0) {
+                x = gp.tileSize/2;
+                y += iconSize;
+            }
         }
 
         x = gp.tileSize/2;
+        y = gp.tileSize/2;
         i = 0;
 
         while(i < gp.player.life) {
-            g2.drawImage(heart_half, x, y, null);
+            g2.drawImage(heart_half, x, y, iconSize, iconSize, null);
             i++;
             if (i < gp.player.life) {
-                g2.drawImage(heart_full, x, y, null);
+                g2.drawImage(heart_full, x, y, iconSize, iconSize, null);
             }
             i++;
-            x += gp.tileSize;
+            x += gp.tileSize*0.75;
+
+            if(i % 16 == 0) {
+                x = gp.tileSize/2;
+                y += iconSize;
+            }
         }
         
 
         //DRAW MAX MANA
-        x = (gp.tileSize/2)-5;
-        y = (int) (gp.tileSize*1.5);
+        x = manaStartX;
+        y = manaStartY;
         i = 0;
         //y += gp.tileSize;
         while(i < gp.player.maxMana) {
-            g2.drawImage(crystal_blank, x, y, null);
+            g2.drawImage(crystal_blank, x, y, iconSize, iconSize, null);
             i++;
-            x += 35;
+            x += 20;
         }
-        x = (gp.tileSize/2)-5;
-        y = (int) (gp.tileSize*1.5);
+        x = manaStartX;
+        y = manaStartY;
         i = 0;
 
         while(i < gp.player.mana) {
-            g2.drawImage(crystal_full, x, y, null);
+            g2.drawImage(crystal_full, x, y, iconSize, iconSize, null);
             i++;
-            x += 35;
+            x += 20;
         }
 
 

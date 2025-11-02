@@ -49,6 +49,25 @@ public class Player extends Entity {
         speed = defaultSpeed;
         direction = "down";
         
+        // Orc
+        //worldX = gp.tileSize * 10;
+        //worldY = gp.tileSize * 33;
+
+        // Donjon entrée
+        //worldX = gp.tileSize * 12;
+        //worldY = gp.tileSize * 11;
+
+        // Marchant
+        //gp.currentMap = 1;
+        //worldX = gp.tileSize * 12;
+        //worldY = gp.tileSize * 11;
+
+        // Donjon 2eme étage
+        gp.currentMap = 3;
+        worldX = gp.tileSize * 25;
+        worldY = gp.tileSize * 29;      
+
+
         //PLAYER STATUS
         level = 1;
         maxLife = 6;
@@ -58,6 +77,16 @@ public class Player extends Entity {
         ammo = 10;
         strength = 1;
         dexterity = 1;
+
+        // Test stats
+        maxLife = 32;
+        life = maxLife;
+        maxMana = 8;
+        mana = maxMana;
+        ammo = 10;
+        strength = 3;
+        dexterity = 3;
+
         exp = 0;
         nextLevelExp = 5;
         coin = 500;
@@ -75,6 +104,7 @@ public class Player extends Entity {
         setDialogue();
     }
     public void setDefaultPositions() {
+
 
         gp.currentMap = 0;
         worldX = gp.tileSize * 23;
