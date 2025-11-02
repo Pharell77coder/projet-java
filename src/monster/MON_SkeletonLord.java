@@ -2,6 +2,7 @@ package monster;
 
 import java.util.Random;
 
+import data.Progress;
 import entity.Entity;
 import main.GamePanel;
 import object.*;
@@ -41,6 +42,7 @@ public class MON_SkeletonLord extends Entity {
 
         getImage();
         getAttackImage();
+        setDialogue();
     }
     public void getImage() {
 
@@ -125,6 +127,22 @@ public class MON_SkeletonLord extends Entity {
         actionLockCounter = 0;
     }
     public void checkDrop() {
+
+        gp.bossBattleOn = false;
+        Progress.skeletonLordDefeated = true;
+        // Cast a die  
+        gp.stopMusic();
+        gp.playMusic("Dungeon.wav");
+
+        // Remove the iron doors
+        for(int i = 0; i < gp.obj[1].length; i++) {
+            if(gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].name.equals(OBJ_Door_Iron.objName)) {
+                gp.SE("dooropen.wav");
+                gp.obj[gp.currentMap][i] = null;
+
+            }
+        }
+
         int i = new Random().nextInt(100)+1;
         if(i < 50){
             dropItem(new OBJ_Coin_Bronze(gp));

@@ -49,6 +49,7 @@ public class Entity {
     public boolean opened = false;
     public boolean inRage = false;
     public boolean sleep = false;
+    public boolean drawing = true;
 
     //COUNTER
     public int actionLockCounter = 0;

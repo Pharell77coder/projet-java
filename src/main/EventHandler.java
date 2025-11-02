@@ -1,5 +1,6 @@
 package main;
 
+import data.Progress;
 import entity.Entity;
 
 public class EventHandler{
@@ -134,8 +135,8 @@ public class EventHandler{
         }
     }
     public void skeletonLord() {
-        if(gp.bossBattleOn == false) {
-            gp.gameState = gp.cutSceneState;
+        if(gp.bossBattleOn == false && Progress.skeletonLordDefeated == false) {
+            gp.gameState = gp.cutsceneState;
             gp.csManager.sceneNum = gp.csManager.skeletonLord;
         }
     }
