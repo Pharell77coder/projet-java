@@ -67,6 +67,7 @@ public class EventHandler{
             else if(hit(2,9,41, "any")) {teleport(0, 11,9, gp.outside);} // to outside
             else if(hit(2, 8,7, "any")) {teleport(3,27,41, gp.dungeon);} // to B2
             else if(hit(3,26,41, "any")) {teleport(2, 9,7, gp.dungeon);} // to B1
+            else if(hit(3,25,27, "any")) {skeletonLord();} // BOSS
         }
 
 
@@ -130,6 +131,12 @@ public class EventHandler{
             gp.gameState = gp.dialogueState;
             gp.player.attackCanceled = true;
             entity.speak();
+        }
+    }
+    public void skeletonLord() {
+        if(gp.bossBattleOn == false) {
+            gp.gameState = gp.cutSceneState;
+            gp.csManager.sceneNum = gp.csManager.skeletonLord;
         }
     }
 }
