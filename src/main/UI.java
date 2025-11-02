@@ -285,7 +285,7 @@ public class UI {
             //TITLE NAME
             g2.setFont(g2.getFont().deriveFont(Font.BOLD,70F));
             String text = "Blue Boy Adventure";
-            int x = getXforCentreredText(text);
+            int x = getXforCenteredText(text);
             int y = gp.tileSize*3;
 
             //SHADOW
@@ -305,7 +305,7 @@ public class UI {
             g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
 
             text = "NOUVELLE PARTIE";
-            x = getXforCentreredText(text);
+            x = getXforCenteredText(text);
             y += gp.tileSize*3.5;
             g2.drawString(text, x, y);
             if (commandNum == 0){
@@ -313,7 +313,7 @@ public class UI {
             }
 
             text = "CHARGER UNE PARTIE";
-            x = getXforCentreredText(text);
+            x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
             if (commandNum == 1){
@@ -321,7 +321,7 @@ public class UI {
             }
 
             text = "QUITTER";
-            x = getXforCentreredText(text);
+            x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
             if (commandNum == 2){
@@ -332,12 +332,12 @@ public class UI {
             g2.setFont(g2.getFont().deriveFont(40F));
 
             String text = "Sélectionnez votre classe !";
-            int x = getXforCentreredText(text);
+            int x = getXforCenteredText(text);
             int y = gp.tileSize*3;
             g2.drawString(text, x, y);
 
             text = "Combattant";
-            x = getXforCentreredText(text);
+            x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
             if(commandNum == 0){
@@ -345,7 +345,7 @@ public class UI {
             }
 
             text = "Voleur";
-            x = getXforCentreredText(text);
+            x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
             if(commandNum == 1){
@@ -353,7 +353,7 @@ public class UI {
             }
 
             text = "Sorcier";
-            x = getXforCentreredText(text);
+            x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
             if(commandNum == 2){
@@ -361,7 +361,7 @@ public class UI {
             }
 
             text = "Retour";
-            x = getXforCentreredText(text);
+            x = getXforCenteredText(text);
             y += gp.tileSize*2;
             g2.drawString(text, x, y);
             if(commandNum == 3){
@@ -373,7 +373,7 @@ public class UI {
 
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN,80F));
         String text = "PAUSE";
-        int x = getXforCentreredText(text);
+        int x = getXforCenteredText(text);
         int y = gp.screenHeight/2;
         g2.drawString(text, x, y);
 
@@ -656,7 +656,7 @@ public class UI {
 
         text = "GAME OVER";
         g2.setColor(Color.black);        
-        x = getXforCentreredText(text);
+        x = getXforCenteredText(text);
         y = gp.tileSize*4;
         g2.drawString(text, x, y);
 
@@ -665,7 +665,7 @@ public class UI {
 
         g2.setFont(g2.getFont().deriveFont(50f));
         text = "Recommencer";
-        x = getXforCentreredText(text);
+        x = getXforCenteredText(text);
         y += gp.tileSize*4;
         g2.drawString(text, x, y);
         if(commandNum == 0) {
@@ -674,7 +674,7 @@ public class UI {
 
         g2.setFont(g2.getFont().deriveFont(50f));
         text = "Quitter";
-        x = getXforCentreredText(text);
+        x = getXforCenteredText(text);
         y += 55;
         g2.drawString(text, x, y);
         if(commandNum == 1) {
@@ -707,7 +707,7 @@ public class UI {
 
         // TITILE
         String text = "Options";
-        textX = getXforCentreredText(text);
+        textX = getXforCenteredText(text);
         textY = frameY + gp.tileSize;
         g2.drawString(text, textX, textY);
 
@@ -815,7 +815,7 @@ public class UI {
         int textY;
 
         String text = "Contrôle";
-        textX = getXforCentreredText(text);
+        textX = getXforCenteredText(text);
         textY = frameY + gp.tileSize;
         g2.drawString(text, textX, textY);
 
@@ -858,7 +858,7 @@ public class UI {
             textY += 40;
         }
         String text = "OUI";
-        textX = getXforCentreredText(text);
+        textX = getXforCenteredText(text);
         textY += gp.tileSize*3;
         g2.drawString(text, textX, textY);
         if(commandNum == 0) {
@@ -871,7 +871,7 @@ public class UI {
             }
         }
         text = "NON";
-        textX = getXforCentreredText(text);
+        textX = getXforCenteredText(text);
         textY += gp.tileSize;
         g2.drawString(text, textX, textY);
         if(commandNum == 1) {
@@ -1080,7 +1080,7 @@ public class UI {
         g2.drawRoundRect(x+5, y+5, width-10, height-10, 25, 25);
 
     }
-    public int getXforCentreredText(String text){
+    public int getXforCenteredText(String text){
         int length = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         return gp.screenWidth/2 - length/2;
     }

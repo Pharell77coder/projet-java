@@ -63,9 +63,9 @@ public class Player extends Entity {
         //worldY = gp.tileSize * 11;
 
         // Donjon 2eme étage
-        gp.currentMap = 3;
+        /*gp.currentMap = 3;
         worldX = gp.tileSize * 25;
-        worldY = gp.tileSize * 29;      
+        worldY = gp.tileSize * 29; */     
 
 
         //PLAYER STATUS
@@ -78,23 +78,12 @@ public class Player extends Entity {
         strength = 1;
         dexterity = 1;
 
-        // Test stats
-        maxLife = 32;
-        life = maxLife;
-        maxMana = 8;
-        mana = maxMana;
-        ammo = 10;
-        strength = 300;
-        dexterity = 3;
-
         exp = 0;
         nextLevelExp = 5;
         coin = 500;
         currentWeapon = new OBJ_Sword_Normal(gp);
-        /*currentShield = new OBJ_Shield_Wood(gp);
-        currentLight = null;*/
-        currentShield = new OBJ_Shield_Blue(gp);
-        currentLight = new OBJ_Lantern(gp);
+        currentShield = new OBJ_Shield_Wood(gp);
+        currentLight = null;
         projectile = new OBJ_Fireball(gp);
         attack = getAttack();
         defense = getDefense();
@@ -106,8 +95,6 @@ public class Player extends Entity {
         setDialogue();
     }
     public void setDefaultPositions() {
-
-
         gp.currentMap = 0;
         worldX = gp.tileSize * 23;
         worldY = gp.tileSize * 21;

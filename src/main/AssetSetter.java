@@ -1,5 +1,6 @@
 package main;
 
+import data.Progress;
 import entity.*;
 import monster.*;
 import object.*;
@@ -80,6 +81,9 @@ public class AssetSetter {
         gp.obj[mapNum][i].worldX = gp.tileSize*25;
         gp.obj[mapNum][i].worldY = gp.tileSize*15;
         i++;
+        gp.obj[mapNum][i] = new OBJ_BlueHeart(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*25;
+        gp.obj[mapNum][i].worldY = gp.tileSize*8;
 
 
     }
@@ -176,9 +180,11 @@ public class AssetSetter {
 
         mapNum = 3;
         i = 0;
-        gp.monster[mapNum][i] = new MON_SkeletonLord(gp);
-        gp.monster[mapNum][i].worldX = gp.tileSize*23;
-        gp.monster[mapNum][i].worldY = gp.tileSize*16;
+        if(Progress.skeletonLordDefeated == false) {
+            gp.monster[mapNum][i] = new MON_SkeletonLord(gp);
+            gp.monster[mapNum][i].worldX = gp.tileSize*23;
+            gp.monster[mapNum][i].worldY = gp.tileSize*16;
+        }
 
     }
     public void setInteractiveTile() {
@@ -240,7 +246,6 @@ public class AssetSetter {
         gp.iTile[mapNum][i] = new IT_MetalPlate(gp,20,22);i++;
         gp.iTile[mapNum][i] = new IT_MetalPlate(gp,8,17);i++;
         gp.iTile[mapNum][i] = new IT_MetalPlate(gp,39, 31);//noinspection UnusedAssignment
-        i++;
 
 
 
